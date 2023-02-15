@@ -1,0 +1,4 @@
+.custom_link:hover,
+.custom_link:active {
+  font-weight: 500;
+}
