@@ -1,5 +1,12 @@
+import Head from "next/head";
+
 function Home() {
-  return <h1>Home</h1>;
+  return (
+    <>
+      <Head></Head>
+      <h1>Home</h1>
+    </>
+  );
 }
 
 export default Home;

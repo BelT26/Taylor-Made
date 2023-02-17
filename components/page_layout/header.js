@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Link from "next/link";
-import classes from "./header.module.css";
+import classes from "./Header.module.css";
 
 function CustomLink({ href, children }) {
   return (
@@ -33,17 +33,17 @@ function Header() {
             </Nav.Link>
             <NavDropdown title="Portfolio" id="basic-nav-dropdown">
               <NavDropdown.Item as="span">
-                <CustomLink href="portfolio">All Projects</CustomLink>
+                <CustomLink href="/portfolio">All Projects</CustomLink>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as="span">
-                <CustomLink href="portfolio/1">Project 1</CustomLink>
+                <CustomLink href="/portfolio/1">Project 1</CustomLink>
               </NavDropdown.Item>
               <NavDropdown.Item as="span">
-                <CustomLink href="portfolio/2">Project 2</CustomLink>
+                <CustomLink href="/portfolio/2">Project 2</CustomLink>
               </NavDropdown.Item>
               <NavDropdown.Item as="span">
-                <CustomLink href="portfolio/3">Project 3</CustomLink>
+                <CustomLink href="/portfolio/3">Project 3</CustomLink>
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as="span">
