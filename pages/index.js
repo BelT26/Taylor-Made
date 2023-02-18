@@ -1,20 +1,28 @@
 import Head from "next/head";
+import ImagesContainer from "@/components/page_layout/ImagesContainer";
+import NinaBW from "../public/nina_home_bw.png";
+import PlutoBW from "../public/pluto_main_bw.png";
+import SouksBW from "../public/souks_home_bw.png";
+import WildEdenBW from "../public/wild_eden_home_bw.png";
+import WellbeingMusicBW from "../public/wb_music_bw.png";
+import ReigateDadsBW from "../public/rdfc_home_bw.png";
+
+const images = [
+  { alt: "Preview of Nina Wedding Singer Site", src: NinaBW },
+  { alt: "Preview of Finding Pluto site", src: PlutoBW },
+  { alt: "Preview of 1001 Souks site", src: SouksBW },
+  { alt: "Preview of Wild Eden site", src: WildEdenBW },
+  { alt: "Preview of Wellbeing Music site", src: WellbeingMusicBW },
+  { alt: "Preview of Reigate Dads site", src: ReigateDadsBW },
+];
 
 function Home() {
   return (
     <>
       <Head>
-        <title>Taylor-Made WD</title>
-        <meta
-          name="description"
-          content="Professional Freelance Web Developer, London. I specialize in creating stunning, fully responsive website designs that place emphasis on modern user experience"
-        />
-        <meta name="author" content="Helen Taylor" />
-        <meta
-          name="keywords"
-          content="freelance web designer, freelance software developer, professional web developer, london, affordable website, website design, experienced web developer, responsive design, user experience, javasript, reactjs, nextjs, html, css, python, django"
-        />
+        <title>Taylor-Made WD - Home</title>
       </Head>
+      <ImagesContainer images={images} />
       <h1>Taylor-Made Web Design</h1>
       <p>
         If you're looking for a freelance web developer to take your online
