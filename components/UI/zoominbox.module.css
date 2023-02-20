@@ -1,0 +1,23 @@
+.zoom_in_box {
+  margin: 24px;
+  opacity: 0.8;
+  animation: zoom-in 5s ease 1;
+  text-align: center;
+  padding: 10px;
+}
+
+.zoom_in_box h1 {
+  animation: zoom-in 5s ease 1;
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.1, 0.1);
+  }
+  50% {
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

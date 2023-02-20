@@ -1,11 +1,12 @@
 import Head from "next/head";
-import ImagesContainer from "@/components/page_layout/ImagesContainer";
+import ImagesContainer from "@/components/UI/ImagesContainer";
 import NinaBW from "../public/nina_home_bw.png";
 import PlutoBW from "../public/pluto_main_bw.png";
 import SouksBW from "../public/souks_home_bw.png";
 import WildEdenBW from "../public/wild_eden_home_bw.png";
 import WellbeingMusicBW from "../public/wb_music_bw.png";
 import ReigateDadsBW from "../public/rdfc_home_bw.png";
+import ZoomInBox from "@/components/UI/ZoomInBox";
 
 const images = [
   { alt: "Preview of Nina Wedding Singer Site", src: NinaBW },
@@ -23,7 +24,10 @@ function Home() {
         <title>Taylor-Made WD - Home</title>
       </Head>
       <ImagesContainer images={images} />
-      <h1>Taylor-Made Web Design</h1>
+      <ZoomInBox color="white" background="black" height="120" width="400">
+        Taylor Made Web Design
+      </ZoomInBox>
+
       <p>
         If you're looking for a freelance web developer to take your online
         presence to the next level, look no further! I specialize in creating
