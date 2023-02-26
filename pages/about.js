@@ -8,7 +8,7 @@ function About() {
         <title>Taylor-Made WD - About</title>
       </Head>
       <h1>About</h1>
-      <AnimatedButton>Click Me</AnimatedButton>
+      <AnimatedButton link="/">Click Me</AnimatedButton>
     </>
   );
 }

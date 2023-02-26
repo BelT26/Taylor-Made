@@ -17,7 +17,7 @@ function AnimatedButton(props) {
       <div className={classes.animated_button_container}>
         <div className={classes.animated_button_content}>
           <Link
-            href="/"
+            href={props.link}
             className={classes.animated_button}
             style={{ color: "white" }}
           >

@@ -36,7 +36,7 @@ function Header() {
                 <CustomLink href="/portfolio">All Projects</CustomLink>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as="span">
+              {/* <NavDropdown.Item as="span">
                 <CustomLink href="/portfolio/1">Project 1</CustomLink>
               </NavDropdown.Item>
               <NavDropdown.Item as="span">
@@ -44,7 +44,7 @@ function Header() {
               </NavDropdown.Item>
               <NavDropdown.Item as="span">
                 <CustomLink href="/portfolio/3">Project 3</CustomLink>
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
             </NavDropdown>
             <Nav.Link as="span">
               <CustomLink href="/contact">Contact</CustomLink>

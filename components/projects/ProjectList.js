@@ -1,15 +1,16 @@
-import Project from "./Project";
+import ProjectIntro from "./ProjectIntro";
 
 function ProjectList({ projects }) {
   return (
     <ul>
       {projects.map((project) => (
-        <Project
+        <ProjectIntro
           key={project.id}
           image={project.image}
           title={project.title}
-          description={project.description}
-          url={project.url}
+          description={project.summary}
+          url={project.siteUrl}
+          imageSide={project.imageSide}
         />
       ))}
     </ul>

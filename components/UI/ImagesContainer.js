@@ -9,8 +9,15 @@ function ImagesContainer({ images }) {
     <Container fluid>
       <Row>
         {images.map((img) => (
-          <Col xs={12} md={6} xl={4} className={classes.image_column}>
-            <Image src={img.src} alt={img.alt} height={300} />
+          <Col
+            xs={12}
+            md={6}
+            lg={4}
+            xl={3}
+            className={classes.image_column}
+            key={img.alt}
+          >
+            <Image src={img.src} alt={img.alt} height={225} />
           </Col>
         ))}
       </Row>

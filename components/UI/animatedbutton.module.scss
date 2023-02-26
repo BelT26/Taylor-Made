@@ -1,15 +1,5 @@
-$button-color: blueviolet;
+$button-color: rgb(51, 40, 62);
 $transition-time: 750ms;
-
-// .animated_button_container {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   min-height: 100vh;
-//   background-color: #ededed;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
 
 .animated_button {
   position: relative;
@@ -22,6 +12,8 @@ $transition-time: 750ms;
   z-index: 1;
   align-items: center;
   box-shadow: 0px 3px 4px -4px rgba(0, 0, 0, 0.75);
+  margin: 10px;
+  border-radius: 10px;
 
   &::before {
     content: "";
