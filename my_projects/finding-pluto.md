@@ -1,11 +1,12 @@
 ---
 id: "FPL"
 title: "Finding Pluto"
-image: "finding-pluto.PNG"
+image: "/images/finding-pluto.PNG"
 summary: "A quiz to help Nuna the alien reach Pluto"
-imageSide: "right"
+imageSide: "left"
 siteUrl: "https://belt26.github.io/Finding-Pluto/"
-priority: 5
+priority: 2
+slug: "finding-pluto"
 ---
 
 # FINDING PLUTO

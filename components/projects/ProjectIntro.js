@@ -11,17 +11,24 @@ function ProjectIntroSection(props) {
   function showProjectPage() {
     router.push("/" + props.slug);
   }
+  let rowClass;
+  rowClass =
+    props.imageSide === "right"
+      ? classes.intro_row_right
+      : classes.intro_row_left;
   return (
     <Container fluid>
-      <Row className={classes.intro_row}>
+      <Row className={rowClass}>
         <Col xs={12} lg={6} className={classes.intro_text}>
-          <h2>{props.title}</h2>
-          <p>{props.summary}</p>
-          <AnimatedButton link="/">Visit Site</AnimatedButton>
-          <AnimatedButton link="/">Further Info</AnimatedButton>
+          <h2 className={classes.project_title}>{props.title}</h2>
+          <p>{props.description}</p>
+          <AnimatedButton link={props.url}>Visit Site</AnimatedButton>
+          {/* <AnimatedButton link={"/portolio/" + props.slug}>
+            Further Info
+          </AnimatedButton> */}
         </Col>
         <Col xs={12} lg={6}>
-          {/* <Image src={props.image} height={200} width={300} /> */}
+          {<Image src={props.image} height={300} width={500} />}
         </Col>
       </Row>
     </Container>

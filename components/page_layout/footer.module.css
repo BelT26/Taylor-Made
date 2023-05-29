@@ -1,0 +1,36 @@
+.footer_container {
+  color: rgb(51, 50, 51);
+  background-color: rgb(207, 213, 225);
+  padding: 35px 25px 25px;
+  margin-top: 20px;
+}
+
+.footer_container i {
+  font-size: 2rem;
+}
+
+.social_icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer_right {
+  text-align: right;
+}
+
+.footer_right a {
+  color: darkslategrey;
+  text-decoration: none;
+}
+
+.footer_right a:hover,
+.footer_right a:active {
+  color: cornflowerblue;
+}
+
+@media screen and (max-width: 992px) {
+  .footer_item {
+    text-align: center;
+    margin: 10px 0;
+  }
+}

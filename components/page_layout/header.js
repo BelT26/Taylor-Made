@@ -19,9 +19,18 @@ function CustomLink({ href, children }) {
 
 function Header() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className={classes.navbar} expand="lg">
       <Container fluid>
-        <Navbar.Brand href="/">Taylor-Made</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <img
+            src="/images/brian-nb.png"
+            height={70}
+            className={classes.brian}
+            alt="company logo of a cute spider holding a sewing needle attached to a thread from a web"
+          />
+          <span className={classes.taylor}>Taylor-Made</span>
+          <span className={classes.web}> WEB DESIGN</span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -29,23 +38,8 @@ function Header() {
               <CustomLink href="/">Home</CustomLink>
             </Nav.Link>
             <Nav.Link as="span">
-              <CustomLink href="/about">About</CustomLink>
+              <CustomLink href="/portfolio">Portfolio</CustomLink>
             </Nav.Link>
-            <NavDropdown title="Portfolio" id="basic-nav-dropdown">
-              <NavDropdown.Item as="span">
-                <CustomLink href="/portfolio">All Projects</CustomLink>
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              {/* <NavDropdown.Item as="span">
-                <CustomLink href="/portfolio/1">Project 1</CustomLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item as="span">
-                <CustomLink href="/portfolio/2">Project 2</CustomLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item as="span">
-                <CustomLink href="/portfolio/3">Project 3</CustomLink>
-              </NavDropdown.Item> */}
-            </NavDropdown>
             <Nav.Link as="span">
               <CustomLink href="/contact">Contact</CustomLink>
             </Nav.Link>

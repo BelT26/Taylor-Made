@@ -1,11 +1,13 @@
 ---
 id: "WBM"
 title: "Wellbeing Music"
-image: "wellbeing-music.PNG"
+image: "/images/wellbeing-music.PNG"
 summary: "The Wellbeing Music site created for Nina"
-imageSide: "left"
+summary2: ""
+imageSide: "right"
 siteUrl: "https://www.wellbeingmusic.co.uk/"
-priority: 2
+priority: 5
+slug: "wellbeing-music"
 ---
 
 # WELLBEING MUSIC

@@ -1,26 +1,83 @@
 .zoom_in_box {
-  margin: 24px;
-  width: 400px;
-  height: 120px;
-  background: black;
-  opacity: 0.8;
-  animation: zoom-in 5s ease 1;
+  position: relative;
+  top: -400px;
+  animation: zoom-in 3s linear 1;
   text-align: center;
   padding: 10px;
+  z-index: 3;
 }
 
 .zoom_in_box h1 {
-  color: whitesmoke;
-  animation: zoom-in 5s ease 1;
+  color: white;
+  animation: zoom-in 3s ease 1;
+  z-index: 99;
+  opacity: 1;
+  font-size: 3rem;
+}
+
+.zoom_in_box h2 {
+  color: white;
+  animation: zoom-in 3s ease 1;
+  z-index: 99;
+  font-size: 2rem;
+}
+
+.intro {
+  position: relative;
+  top: -100px;
+}
+
+.intro_header_div {
+  text-align: center;
+}
+
+.about {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.taylor {
+  font-family: "Nunito", sans-serif;
+}
+
+.web {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+}
+
+.intro_text_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.intro_text_col {
+  background-color: rgb(235, 235, 240);
+  padding: 20px;
+  display: inline;
+  margin: 10px;
+  width: 380px;
+  font-weight: 300;
+  font-size: 1.1rem;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.box {
+  height: 300px;
+  width: 700px;
+  background-color: #668ea7;
+  color: #eef0f2;
+  padding: 30px;
 }
 
 @keyframes zoom-in {
   0% {
     transform: scale(0.1, 0.1);
   }
-  50% {
-    transform: scale(0.5, 0.5);
-  }
+
   100% {
     transform: scale(1, 1);
   }

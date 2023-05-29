@@ -21,7 +21,8 @@ function AnimatedButton(props) {
             className={classes.animated_button}
             style={{ color: "white" }}
           >
-            {props.children}
+            {" "}
+            <div className={classes.button_text}>{props.children}</div>
             <span>
               <HiArrowNarrowRight className={classes.right_arrow} />
             </span>

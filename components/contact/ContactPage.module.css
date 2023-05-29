@@ -1,0 +1,36 @@
+.contact_page_container {
+  margin: 0;
+  padding: 0;
+}
+
+.content_left {
+  color: white;
+  margin: 30px;
+  padding: 0;
+  text-align: center;
+}
+
+.content_left h1 {
+  z-index: 3;
+
+  font-size: 4rem;
+
+  display: inline-block;
+}
+
+.contact_background {
+  z-index: 0;
+  height: 80vh;
+  width: auto;
+}
+
+.content_right {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background-color: #668ea7;
+  color: #eef0f2;
+  margin: 30px;
+}

@@ -1,0 +1,16 @@
+.intro_row_right {
+  background-color: #eef0f2;
+  margin: 0;
+  padding: 50px;
+}
+
+.intro_row_left {
+  margin: 0;
+  padding: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.project_title {
+  font-family: "Nunito", sans-serif;
+}

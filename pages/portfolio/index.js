@@ -3,6 +3,8 @@ import Head from "next/head";
 import ProjectList from "../../components/projects/ProjectList";
 import Container from "react-bootstrap/Container";
 import { getAllProjects } from "@/lib/projects-util";
+import ProjectCarousel from "@/components/projects/ProjectCarousel";
+import classes from "./projects.module.css";
 
 function Portfolio(props) {
   return (
@@ -10,8 +12,13 @@ function Portfolio(props) {
       <Head>
         <title>Taylor-Made WD - Portfolio</title>
       </Head>
-      <Container fluid>
-        <h1>Portfolio</h1>
+      {/* <Container>
+        <ProjectCarousel />
+      </Container> */}
+      <Container className="text-center py-5">
+        <h1 className={classes.heading}>Projects</h1>
+      </Container>
+      <Container>
         <ProjectList projects={props.projects} />
       </Container>
     </>
@@ -19,13 +26,6 @@ function Portfolio(props) {
 }
 
 export function getStaticProps() {
-  // const client = await MongoClient.connect(
-  //   "mongodb+srv://HelenT:pfVcRZN0bFJMptOP@cluster0.6tfofs8.mongodb.net/?retryWrites=true&w=majority"
-  // );
-  // const db = client.db("taylor-made");
-  // const projectCollection = db.collection("projects");
-  // const allProjects = await projectCollection.find().toArray();
-  // client.close();
   const allProjects = getAllProjects();
   return {
     props: {

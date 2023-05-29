@@ -11,6 +11,7 @@ function ProjectList({ projects }) {
           description={project.summary}
           url={project.siteUrl}
           imageSide={project.imageSide}
+          slug={project.slug}
         />
       ))}
     </ul>

@@ -1,0 +1,26 @@
+.image_container {
+  padding: 0;
+  width: 80vw;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 700px;
+  text-align: center;
+}
+
+.carousel_slide {
+  padding-right: var(--bs-gutter-x, 2rem);
+}
+
+.hero_img {
+  object-fit: contain;
+  overflow: hidden;
+  width: 80vw;
+}
+
+.caption_overlay {
+  background-color: rgb(53, 52, 54);
+  width: 30vw;
+  height: auto;
+  opacity: 0.77;
+  z-index: 3;
+}

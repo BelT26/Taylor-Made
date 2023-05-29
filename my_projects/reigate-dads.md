@@ -1,11 +1,12 @@
 ---
 id: "RDFC"
 title: "Reigate Dads"
-image: "reigate-dads.PNG"
+image: "/images/reigate-dads.PNG"
 summary: "The Reigate Dads site created for Steve"
 imageSide: "right"
 siteUrl: "https://reigate-dads.onrender.com"
 priority: 3
+slug: "reigate-dads"
 ---
 
 # REIGATE DADS

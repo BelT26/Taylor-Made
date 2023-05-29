@@ -1,0 +1,11 @@
+.image_container {
+  padding: 0;
+  width: 100vw;
+  height: 650px;
+}
+
+.hero_img {
+  object-fit: cover;
+  overflow: hidden;
+  width: 100vw;
+}

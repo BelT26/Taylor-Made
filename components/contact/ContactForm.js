@@ -1,133 +1,130 @@
 import classes from "./ContactForm.module.css";
-import { useState, useEffect } from "react";
-import Notification from "../ui/notification";
+import { useState } from "react";
+import Link from "next/link";
 
-async function sendContactData(contactDetails) {
-  const response = await fetch("/api/contact", {
-    method: "POST",
-    body: JSON.stringify(contactDetails),
-    headers: {
-      "Content-Type": "application/json",
-    },
+export default function Contact() {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: "",
   });
-  const data = await response.json();
 
-  if (!response.ok) {
-    throw new Error(data.message || "Something went wrong!");
-  }
-}
+  const [submitting, setSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
-function ContactForm() {
-  const [enteredEmail, setEnteredEmail] = useState("");
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredMessage, setEnteredMessage] = useState("");
-  const [requestStatus, setRequestStatus] = useState();
-  const [requestError, setRequestError] = useState();
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.name]: event.target.value });
+  };
 
-  useEffect(() => {
-    if (requestStatus === "success" || requestStatus === "error") {
-      const timer = setTimeout(() => {
-        setRequestStatus(null);
-        setRequestError(null);
-      }, 3000);
-      return () => {
-        clearTimeout(timer);
-      };
-    }
-  }, [requestStatus]);
-
-  async function sendMessageHandler(event) {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setRequestStatus("pending");
-    try {
-      await sendContactData({
-        email: enteredEmail,
-        name: enteredName,
-        message: enteredMessage,
-      });
-      setRequestStatus("success");
-      setEnteredEmail("");
-      setEnteredMessage("");
-      setEnteredName("");
-    } catch (error) {
-      setRequestError(error.message);
-      setRequestStatus("error");
+
+    // Validate form fields
+    if (
+      !formState.name.trim() ||
+      !formState.email.trim() ||
+      !formState.message.trim()
+    ) {
+      setStatusMessage("Please fill out all fields");
+      setShowModal(true);
+      return;
     }
-  }
-  let notification;
-  if (requestStatus === "pending") {
-    notification = {
-      status: "pending",
-      title: "Sending message...",
-      message: "Your message is on its way!",
-    };
-  }
 
-  if (requestStatus === "success") {
-    notification = {
-      status: "success",
-      title: "Success.",
-      message: "Your message has been sent!",
-    };
-  }
+    setSubmitting(true);
 
-  if (requestStatus === "error") {
-    notification = {
-      status: "error",
-      title: "Error",
-      message: requestError,
-    };
-  }
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await response.json();
+
+      setStatusMessage(data.message);
+      setShowModal(true);
+    } catch (error) {
+      setStatusMessage(
+        "There was an error sending your message. Please try again later."
+      );
+      setShowModal(true);
+    }
+
+    setSubmitting(false);
+  };
 
   return (
-    <section className={classes.contact}>
-      <h1>How can I help you?</h1>
-      <form className={classes.form} onSubmit={sendMessageHandler}>
-        <div className={classes.controls}>
-          <div className={classes.control}>
-            <label htmlFor="email">Your Email</label>
-            <input
-              type="email"
-              id="email"
-              required
-              value={enteredEmail}
-              onChange={(event) => setEnteredEmail(event.target.value)}
-            />
-          </div>
-          <div className={classes.control}>
-            <label htmlFor="name">Your Name</label>
-            <input
-              type="text"
-              id="name"
-              required
-              value={enteredName}
-              onChange={(event) => setEnteredName(event.target.value)}
-            />
-          </div>
-        </div>
-        <div className={classes.control}>
-          <label htmlFor="message">Your Message</label>
-          <textarea
-            rows="5"
-            id="message"
-            value={enteredMessage}
+    <div className="container">
+      <form onSubmit={handleSubmit}>
+        <div className="row mb-3 mx-5">
+          <label htmlFor="name" className="form-label">
+            Name
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            name="name"
+            value={formState.name}
+            onChange={handleChange}
+            style={{ borderRadius: 0 }}
             required
-            onChange={(event) => setEnteredMessage(event.target.value)}
           />
         </div>
-        <div className={classes.actions}>
-          <button>Send Message</button>
+
+        <div className="row mb-3 mx-5">
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            name="email"
+            value={formState.email}
+            onChange={handleChange}
+            style={{ borderRadius: 0 }}
+            required
+          />
+        </div>
+
+        <div className="mb-3 mx-5">
+          <label htmlFor="message" className="form-label">
+            Message
+          </label>
+          <textarea
+            className="form-control"
+            id="message"
+            name="message"
+            value={formState.message}
+            onChange={handleChange}
+            style={{ borderRadius: 0 }}
+            required
+          />
+        </div>
+
+        <div className="text-center">
+          <button
+            type="submit"
+            className={classes.form_btn}
+            disabled={submitting}
+          >
+            Send Message
+          </button>
         </div>
       </form>
-      {notification && (
-        <Notification
-          status={notification.status}
-          title={notification.title}
-          message={notification.message}
-        />
+
+      {showModal && (
+        <div>
+          <h2>{statusMessage}</h2>
+          <p>
+            <Link href="/">Home</Link>
+          </p>
+        </div>
       )}
-    </section>
+    </div>
   );
 }
-
-export default ContactForm;
